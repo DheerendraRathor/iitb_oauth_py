@@ -1,6 +1,9 @@
 from .request import TokenExchange
 from .exceptions import InvalidAuthorizationError
 from django.utils.translation import ugettext_lazy as _
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class Authorization(object):
@@ -14,7 +17,7 @@ class Authorization(object):
         if self._code:
             self._token = TokenExchange(code=self._code).exchange()
         else:
-            raise InvalidAuthorizationError(message=_('Neither token nor error is present'))
+            logger.debug('Neither token nor error is present')
 
     def get_token(self):
         try:

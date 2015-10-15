@@ -15,8 +15,8 @@ DEFAULT_APP_SETTINGS = {
     'TOKEN_URL': 'oauth/token/',
     'TOKEN_REVOKE_URL': 'oauth/revoke_token/',
     'DEFAULT_REDIRECT_URI': '',
-    'USER_API_URL': 'user/api/user',
-    'USER_SEND_MAIL_API_URL': 'user/api/send_mail/',
+    'USER_API_URL': 'user/api/user/',
+    'USER_SEND_MAIL_API_URL': 'user/api/user/send_mail/',
     'FIELD_QUERY': 'fields',
 }
 

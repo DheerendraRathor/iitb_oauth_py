@@ -8,7 +8,7 @@ dependencies = ['django>1.8', 'requests']
 
 setup(
     name='iitb_oauth',
-    version='0.0.3',
+    version='0.0.4',
     url='https://github.com/DheerendraRathor/iitb_oauth_py',
     packages=['oauth'],
     include_package_data=True,

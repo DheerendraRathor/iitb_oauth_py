@@ -184,6 +184,7 @@ class UserSendMailAPIRequest(APIRequest):
         json_data = json.dumps(data)
         self.kwargs['data'] = json_data
         self.response = requests.request(**self.kwargs)
+        return self._process_reponse()
 
     def _process_reponse(self):
         json_response = self.response.json()

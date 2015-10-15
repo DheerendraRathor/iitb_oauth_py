@@ -183,6 +183,7 @@ class UserSendMailAPIRequest(APIRequest):
         }
         json_data = json.dumps(data)
         self.kwargs['data'] = json_data
+        self.kwargs['headers'].update({'Content-type': 'application/json'})
         self.response = requests.request(**self.kwargs)
         return self._process_reponse()
 

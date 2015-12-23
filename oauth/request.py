@@ -81,7 +81,7 @@ class RequestType(object):
 
 class OAuthRequest(object):
     def __init__(self):
-        self.auth = HTTPBasicAuth(sso_oauth_settings.CLIENT_ID, sso_oauth_settings.CLIENT_SECRET)
+        self.auth = {'client_id': sso_oauth_settings.CLIENT_ID, 'client_secret': sso_oauth_settings.CLIENT_SECRET}
         self.response = None
 
     def execute(self):
@@ -99,7 +99,8 @@ class TokenExchangeRequest(OAuthRequest):
         self.data = data
 
     def execute(self):
-        self.response = requests.post(self.url, self.data, auth=self.auth)
+        request_data = dict(self.data, **self.auth)
+        self.response = requests.post(self.url, request_data)
         return self._process_response()
 
     def _process_response(self):

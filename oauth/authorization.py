@@ -1,6 +1,5 @@
 from .request import TokenExchange
 from .exceptions import InvalidAuthorizationError
-from django.utils.translation import ugettext_lazy as _
 import logging
 
 logger = logging.getLogger(__name__)

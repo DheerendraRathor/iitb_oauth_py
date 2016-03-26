@@ -1,7 +1,6 @@
 import json
 
 import requests
-from requests.auth import HTTPBasicAuth
 
 from django.utils.translation import ugettext_lazy as _
 

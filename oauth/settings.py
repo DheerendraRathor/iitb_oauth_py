@@ -1,7 +1,13 @@
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext as _
-from urlparse import urljoin
+
+from django.utils import six
+
+if six.PY2:
+    from urlparse import urljoin
+if six.PY3:
+    from urllib.parse import urljoin
 
 
 DEFAULT_APP_SETTINGS = {
